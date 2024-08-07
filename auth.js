@@ -1,7 +1,9 @@
-// Function to link account and save to Firestore
-async function linkAccount(userId) {
+async function linkAccount(discordId) {
     try {
-        const userRef = db.collection('users').doc(userId.toString());
+        const userData = await getVerifiedUser(discordId);
+        const robloxId = userData.robloxId;
+        
+        const userRef = db.collection('users').doc(robloxId.toString());
         const doc = await userRef.get();
         if (!doc.exists) {
             await userRef.set({
@@ -18,17 +20,5 @@ async function linkAccount(userId) {
     }
 }
 
-// Event listener to handle account linking
-document.querySelector('.link-button').addEventListener('click', async () => {
-    const username = prompt('Enter your Roblox username:');
-    if (username) {
-        const userData = await getUserData(username);
-        if (userData) {
-            await linkAccount(userData.id);
-        } else {
-            alert('User not found');
-        }
-    } else {
-        alert('Please enter a username.');
-    }
-});
+// Example usage: replace with actual Discord ID
+linkAccount('DISCORD_USER_ID');
