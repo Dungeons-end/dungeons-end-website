@@ -1,0 +1,4 @@
+echo "<!DOCTYPE html><html><head><title>Dungeon's End</title></head><body><h1>Welcome to Dungeon's End!</h1></body></html>" > index.html
+git add index.html
+git commit -m "Initial commit"
+git push origin main
