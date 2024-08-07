@@ -1,4 +1,36 @@
-echo "<!DOCTYPE html><html><head><title>Dungeon's End</title></head><body><h1>Welcome to Dungeon's End!</h1></body></html>" > index.html
-git add index.html
-git commit -m "Initial commit"
-git push origin main
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon's End - My Dungeon Experience</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Dungeon's End</h1>
+        <h2>My Dungeon Experience</h2>
+    </div>
+    <div class="container">
+        <p>Welcome to Dungeon's End! Link your Roblox account to track your progress.</p>
+        <a href="/link-account" class="link-button">Link Roblox Account</a>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCDHhSW-hTcBRLzI8masLBfiPSOLiGt-Pw",
+            authDomain: "dungeons-end.firebaseapp.com",
+            projectId: "dungeons-end",
+            storageBucket: "dungeons-end.appspot.com",
+            messagingSenderId: "803734693285",
+            appId: "1:803734693285:web:45bd0d057dead49827f44c"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+    </script>
+    <script src="roblox-api.js"></script>
+</body>
+</html>
